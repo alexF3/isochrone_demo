@@ -14,7 +14,7 @@ stations['lat'] = stations.geometry.y
 
 # Mapbox API keys
 MAPBOX_API_KEY = st.secrets([MAPBOX_API_KEY])
-GEOCODING_API_KEY = st.secrets([GEOCODING_API_KEY)]
+GEOCODING_API_KEY = st.secrets([GEOCODING_API_KEY])
 
 # Mapbox Geocoding API
 GEOCODING_API_URL = "https://api.mapbox.com/geocoding/v5/mapbox.places/"
