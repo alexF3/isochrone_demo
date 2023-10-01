@@ -7,6 +7,9 @@ import folium
 from streamlit_folium import st_folium
 import geopandas as gpd
 
+st.set_page_config(page_title="Isochrones: Human-Centered Geography with Streamlit")
+
+
 stations = gpd.read_file('data/Amtrak_Stations.geojson')
 stations = stations[stations.StnType=='TRAIN']
 stations['long'] =  stations.geometry.x
@@ -61,13 +64,13 @@ with tab1:
             m = folium.Map(location=center, zoom_start=8)
 
             # Add the isochrone polygons as GeoJSON to the map
-            folium.GeoJson(data).add_to(m)
+            folium.GeoJson(data,style1 = {'fillColor': '#f79205', 'color': '#f79205'}).add_to(m)
             iso = gpd.GeoDataFrame.from_features(data)[0:1].geometry.item()
 
             for row in stations.itertuples():
                 if iso.contains(row.geometry):
                     city = row.City
-                    folium.Marker([row.lat,row.long],popup= row.StationNam +'<br> <a href=https://www.amtrak.com/home.html target="_blank">buy tickets</a>').add_to(m)
+                    folium.Marker([row.lat,row.long],popup= row.StationNam +'<br> <a href=https://www.amtrak.com/home.html target="_blank">buy tickets</a>',style={'color':'#2e4eb0'}).add_to(m)
 
         st_data = st_folium(m, width=725)
 
