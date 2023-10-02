@@ -71,7 +71,7 @@ with tab1:
             m = folium.Map(location=center, zoom_start=8)
 
             # Add the isochrone polygons as GeoJSON to the map
-            folium.GeoJson(data,style=iso_style_function).add_to(m)
+            folium.GeoJson(data,style_function=iso_style_function).add_to(m)
             iso = gpd.GeoDataFrame.from_features(data)[0:1].geometry.item()
 
             for row in stations.itertuples():
