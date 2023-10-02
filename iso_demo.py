@@ -37,9 +37,9 @@ iso_style_function = lambda x: {
 
 }
 
-st.markdown("Isochrones are a great way to distill geospatial data down to the lived experience of a user.  With one simple API call, you can present someone with just the portion of your data that is within an hour's drive of where they are.  That can be a powerful for a number of behavioral science applications.")
 
 with tab1:
+    st.markdown("Isochrones are a great way to distill geospatial data down to the lived experience of a user.  With one simple API call, you can present someone with just the portion of your data that is within an hour's drive of where they are.  That can be a powerful for a number of behavioral science applications.")
 
     st.title("Where Are the Train Stations Near You?")
     st.image("data/train.jpg")
